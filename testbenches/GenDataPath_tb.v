@@ -8,6 +8,7 @@ GenDataPath DUT(
     .Data_in(data_in),
     .DK(DK),
     .valid(valid),
+    
     .Data_out(data_out),
     .ByteType(ByteType)
 
@@ -31,21 +32,27 @@ GenDataPath DUT(
     localparam tlp = 2'b01;
     localparam dllp = 2'b10;
     localparam not_valid_data = 2'b00 ;
-   
-    reg[2:0] type_reg;    
-    reg [1:0]tlp_or_dllp_reg;
-
+ 
 
 initial begin
-
   DK    = 0;
   valid = 0;
   data_in=0;
   #10
-   DK    =64'hc0_00000000000000;
-  valid = 64'hffff_ffff_ffff_ffff;
-  data_in=64'hFB_1234_5674_1234_FD;
+   DK    =1;valid = 64'hfff0000000ffffff;data_in=STP;
   #10
+ DK    =0;valid = 64'hff000000000ffff;data_in=8;
+  #10
+ DK    =1;valid = 64'hffff000000ffff;data_in=END;
+
+  #10
+   DK    =1;valid = 64'hfff0000000ffffff;data_in=SDP;
+  #10
+ DK    =0;valid = 64'hffffff;data_in=8;
+  #10
+ DK    =1;valid = 64'hffff000000ffff;data_in=END;
+  #10
+
 $stop();
 
 end

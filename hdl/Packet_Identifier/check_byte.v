@@ -3,6 +3,7 @@ module check_byte(
     input   [1:0]tlp_or_dllp_in, 
     input   valid,
     input   DK,
+
     output  [2:0]type,
     output  [1:0]tlp_or_dllp_out 
     
@@ -28,36 +29,37 @@ module check_byte(
     localparam not_valid_data = 2'b00 ;
    
     reg[2:0] type_reg;    
-    reg [1:0]tlp_or_dllp_reg;
+    reg [1:0]tlp_or_dllp_out_reg;
+
+    reg [1:0]tlp_or_dllp_in_reg;
 
     always @*
     begin
-        tlp_or_dllp_reg = tlp_or_dllp_in;
-        type_reg = not_valid;
+       tlp_or_dllp_out_reg=tlp_or_dllp_in;
+       
         if(valid)begin
-           case (DK)
-            1:  begin
-                
-            case (data_in)
+            if(DK)
+            begin
+              case (data_in)
             SDP:begin
-                tlp_or_dllp_reg = dllp;
+                tlp_or_dllp_out_reg = dllp;
                 type_reg = dllpstart;
 
                 
             end 
             STP:begin
-                    tlp_or_dllp_reg = tlp;  
+                    tlp_or_dllp_out_reg = tlp;  
                     type_reg = tlpstart;
                 end
         
             END:begin
-                if (tlp_or_dllp_reg == dllp)
+                if (tlp_or_dllp_in == dllp)
                     begin
-                        tlp_or_dllp_reg = not_valid_data;
+                        tlp_or_dllp_out_reg = not_valid_data;
                         type_reg = dllpend;
                     end
-                 if (tlp_or_dllp_reg == tlp) begin
-                    tlp_or_dllp_reg = not_valid_data;
+                 if (tlp_or_dllp_in == tlp) begin
+                    tlp_or_dllp_out_reg = not_valid_data;
                     type_reg = tlpend;     
                  end
                 end    
@@ -65,29 +67,35 @@ module check_byte(
            
             EDB: begin
                 type_reg = tlpedb ;
-                tlp_or_dllp_reg = not_valid_data;
+                tlp_or_dllp_out_reg = not_valid_data;
                 end             
         
-            PAD:type_reg = not_valid;
-            default: type_reg = not_valid;
-            endcase
+            PAD:type_reg = not_valid; 
+              endcase  
             end
-           0: if(tlp_or_dllp_reg != not_valid_data)begin 
+            else 
+            begin
+              if(tlp_or_dllp_in != not_valid_data)begin 
                type_reg=data;
               end 
               else
                begin
                    type_reg=not_valid;
-              end
-            default:type_reg = not_valid;  
-           endcase 
+              end  
+            end
+
+
+
+
         end
-        else begin
-            type_reg = not_valid;
+        else 
+        begin
+            type_reg=not_valid;    
         end
     end
 
 assign type = type_reg;
-assign tlp_or_dllp_out = tlp_or_dllp_reg;
+assign tlp_or_dllp_out = tlp_or_dllp_out_reg;
 
 endmodule
+
