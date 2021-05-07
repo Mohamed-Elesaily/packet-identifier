@@ -4,9 +4,8 @@ module check_byte(
     input   valid,
     input   DK,
 
-    output  [2:0]type,
-    output  [1:0]tlp_or_dllp_out 
-    
+    output  [5:0]type,
+    output  [1:0]tlp_or_dllp_out
 );
 // data boundries
     localparam STP = 8'b111_11011 ;
@@ -16,13 +15,13 @@ module check_byte(
     localparam PAD = 8'b111_10111;
 
 // types
-    localparam data = 3'b000;
-    localparam  not_valid = 3'b111;
-    localparam tlpstart = 3'b001 ;
-    localparam tlpend = 3'b010 ;
-    localparam dllpend = 3'b100 ;
-    localparam dllpstart = 3'b011 ;
-    localparam tlpedb = 3'b101 ;
+    localparam data       = 6'b100_000;
+    localparam  not_valid = 6'b000_000;
+    localparam tlpstart   = 6'b010_000;
+    localparam tlpend     = 6'b001_000;
+    localparam dllpend    = 6'b000_100;
+    localparam dllpstart  = 6'b000_010;
+    localparam tlpedb     = 6'b000_001;
 // 
     localparam tlp = 2'b01;
     localparam dllp = 2'b10;
@@ -36,7 +35,7 @@ module check_byte(
     always @*
     begin
        tlp_or_dllp_out_reg=tlp_or_dllp_in;
-       
+       type_reg=not_valid;  
         if(valid)begin
             if(DK)
             begin
@@ -83,10 +82,6 @@ module check_byte(
                    type_reg=not_valid;
               end  
             end
-
-
-
-
         end
         else 
         begin

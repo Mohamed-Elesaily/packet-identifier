@@ -1,38 +1,59 @@
 module packet_identifier_tb();
 
 reg [511:0]Data_in;
-reg hld_pd;
-reg rst;
-reg clk;
+reg valid_pd;
+reg linkup;
+reg [63:0]DK;
+reg [2:0]gen;
 
 wire [511:0]Data_out;
-wire [64*3 -1:0]ByteType;
+
 wire w;
-reg[63:0]valid;
-localparam p1 = 64'hFB_1234_FD_5C_12_FD_12;
-MacLayer mac(
+wire [63:0]pl_valid     ;
+wire [63:0]pl_dlpstart  ;
+wire [63:0]pl_dlpend    ;
+wire [63:0]pl_tlpstart  ;
+wire [63:0]pl_tlpedb    ;
+wire [63:0]pl_tlpend    ;
+// localparam p1 = 64'hFB_1234_FD_5C_12_FD_12;
+packet_identifier DUT(
 
 
-     .Data_in(Data_in),
-     .hld_pd(hld_pd),
-     .rst(rst),
-     .clk(clk),
+    .data_in(Data_in),
+    .valid_pd(valid_pd),
+    .gen(gen),
+    .linkup(linkup),
+    .DK(DK),
 
-     .Data_out(Data_out),
-     .ByteType(ByteType),
-     .w(w),
-     .valid(valid)
-);
-
-initial begin
-    valid = 64'hFFFF_FFFF_FFFF_FFFF;
-    hld_pd = 0;
-    rst =0; clk= 0;
+    .data_out(Data_out),
+    .pl_valid   (pl_valid   ),
+    .pl_dlpstart(pl_dlpstart),
+    .pl_dlpend  (pl_dlpend  ),
+    .pl_tlpstart(pl_tlpstart),
+    .pl_tlpedb  (pl_tlpedb  ),
+    .pl_tlpend  (pl_tlpend  ),
     
-    Data_in = p1;
-    #100
-    valid = 64'h0;
-    #100
+    
+    .w(w)
+  
+);
+localparam padding = {384{1'b0}};
+localparam padding_dk = {48{1'b0}};
+localparam p1 = 128'hFB_1234560067657349890324043244_FD;
+localparam DK1 = 16'h1_00_1;
+initial begin
+gen = 3'b000;valid_pd=0;linkup=0;DK=0;Data_in=0;
+#10
+valid_pd=1;linkup=1;DK=0;Data_in=0;
+#10
+DK=DK1;Data_in=p1;
+#10
+DK=0;Data_in=0;
+#10
+DK=0;Data_in=0;
+#10
+DK=0;Data_in=0;
+#10
     $stop;
 end
 

@@ -1,4 +1,4 @@
-module MacLayer #(
+module packet_identifier #(
     parameter GEN1_PIPEWIDTH = 8 ,	
 	parameter GEN2_PIPEWIDTH = 8 ,	
 
@@ -10,13 +10,20 @@ module MacLayer #(
 )(
 
 input [511:0]data_in,
-input hld_pd,
-input rst,
-input clk,
-input [2:0]gen,
 input [63:0]DK,
+input valid_pd,
+input [2:0]gen,
+input linkup,
+
 output [511:0] data_out,
-output [191:0] bytetype,
+
+output [63:0]pl_valid,
+output [63:0]pl_dlpstart,
+output [63:0]pl_dlpend,
+output [63:0]pl_tlpstart,
+output [63:0]pl_tlpedb,
+output [63:0]pl_tlpend,
+
 output w
 
 );
@@ -26,44 +33,37 @@ wire [63:0]valid;
 wire [511:0]data;
 wire [511:0]data_sel1;
 wire [511:0]data_sel2;
-wire [191:0] bytetype_sel1;
+wire [383:0] bytetype_sel1;
 wire [63:0]DK_in;
-wire [191:0] bytetype_sel2;
+wire [383:0] bytetype_sel2;
 
 
-pd_register pd_reg(
-    .data_in(data_in),
-    .clk(clk),
-    .rst(rst),
-    .DK_in(DK),
-    .DK_out(DK_in),
-    .hld_pd(hld_pd),
-    .data_out(data),
-    .hld_out(hld)
-);
 
 Gen1_2_DataPath gen1_2_db(
-    .Data_in(data),
-    .DK(DK_in),
+    .Data_in(data_in),
+    .DK(DK),
     .valid(valid),
     .Data_out(data_sel1),
-    .ByteType(bytetype_sel1)
-	 
+
+    .dlpstart(bytetype_sel1[63:0]),
+    .dlpend(bytetype_sel1[127:64]),
+    .tlpstart(bytetype_sel1[191:128]),
+    .tlpedb(bytetype_sel1[255:192]),
+    .tlpend(bytetype_sel1[319:256]),
+    .valid_d(bytetype_sel1[383:320])
 );
 
-
 Gen_ctrl #(
-     .GEN1_PIPEWIDTH(8),	
-	 .GEN2_PIPEWIDTH(8),	
-	 .GEN3_PIPEWIDTH(8),								
-	 .GEN4_PIPEWIDTH(8),	
-	 .GEN5_PIPEWIDTH(8)
+     .GEN1_PIPEWIDTH(GEN1_PIPEWIDTH),	
+	 .GEN2_PIPEWIDTH(GEN2_PIPEWIDTH),	
+	 .GEN3_PIPEWIDTH(GEN3_PIPEWIDTH),								
+	 .GEN4_PIPEWIDTH(GEN4_PIPEWIDTH),	
+	 .GEN5_PIPEWIDTH(GEN5_PIPEWIDTH)
 ) gen_ctrl(
     
-    .hld_pd_gen(hld),
+    .valid_pd(valid_pd),
     .gen(gen),
-    .rst(rst),
-    .clk(clk),
+    .linkup(linkup),
     .sel(sel),
     .valid(valid),
     .w(w)
@@ -75,11 +75,11 @@ Gen_ctrl #(
 Gen_mux gen_mux(
     .data_in1(data_sel1),
     .data_in2(data_sel2),
-    .bytetype1(bytetype1),
-    .bytetype2(bytetype2),
+    .bytetype1(bytetype_sel1),
+    .bytetype2(bytetype_sel2),
     .sel(sel),
     .data_out(data_out),
-    .ByteType(bytetype)
+    .ByteType({pl_valid,pl_tlpend,pl_tlpedb,pl_tlpstart,pl_dlpend,pl_dlpstart})
 );
 
 endmodule

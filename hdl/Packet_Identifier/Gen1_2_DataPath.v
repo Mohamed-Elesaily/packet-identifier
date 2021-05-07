@@ -1,10 +1,17 @@
 
-module GenDataPath(
+module Gen1_2_DataPath(
     input [511:0]Data_in,
     input [63:0]DK,
     input [63:0]valid,
     output [511:0]Data_out,
-    output [64*3 -1:0]ByteType
+
+    output [63:0]dlpstart,
+    output [63:0]dlpend,
+    output [63:0]tlpstart,
+    output [63:0]tlpedb,
+    output [63:0]tlpend,
+    output [63:0]valid_d
+    
 );
 
 wire [63:0]tlp_or_dllp1;
@@ -15,7 +22,6 @@ localparam N = 64;
 
 
 assign Data_out = Data_in;
-wire a,b;
 generate
     genvar i;
     for(i=0;i<64;i = i + 1)
@@ -28,7 +34,7 @@ generate
                 .valid(valid[i]),
                 .DK(DK[i]),
                 
-                .type(ByteType[(i+1)*3 -1:i*3]),
+                .type({valid_d[i],tlpstart[i],tlpend[i],dlpend[i],dlpstart[i],tlpedb[i]}),
                 .tlp_or_dllp_out({tlp_or_dllp1[0],tlp_or_dllp2[0]})
 
             );  
@@ -40,7 +46,7 @@ generate
                 .valid(valid[i]),
                 .DK(DK[i]),
                
-                .type(ByteType[(i+1)*3 -1:i*3]),
+                .type({valid_d[i],tlpstart[i],tlpend[i],dlpend[i],dlpstart[i],tlpedb[i]}),
                 .tlp_or_dllp_out({tlp_or_dllp1[63],tlp_or_dllp2[63]})
             );  
           end
@@ -52,7 +58,7 @@ generate
                 .valid(valid[i]),
                 .DK(DK[i]),
               
-                .type(ByteType[(i+1)*3 -1:i*3]),
+                .type({valid_d[i],tlpstart[i],tlpend[i],dlpend[i],dlpstart[i],tlpedb[i]}),
                 .tlp_or_dllp_out({tlp_or_dllp1[i],tlp_or_dllp2[i]})
             );      
           end  

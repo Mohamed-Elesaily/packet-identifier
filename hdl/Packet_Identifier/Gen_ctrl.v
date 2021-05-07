@@ -7,13 +7,12 @@ module Gen_ctrl
 	parameter GEN5_PIPEWIDTH = 8 
 )(
     
-    // input hld_pd_gen,
+    input valid_pd,
     input [2:0]gen,
-    // input rst,
-    // input clk,
-    // output sel,
-    output [63:0]valid
-    // output w
+    input linkup,
+    output sel,
+    output [63:0]valid,
+    output w
 
 );
 
@@ -25,11 +24,6 @@ localparam gen5_sel = 3'b100;
 
 
 localparam N = 64;
-// reg [2:0]gen1 = GEN1_PIPEWIDTH/8;
-// reg [2:0]gen2 = GEN2_PIPEWIDTH/8;
-// reg [2:0]gen3 = GEN3_PIPEWIDTH/8;
-// reg [2:0]gen4 = GEN4_PIPEWIDTH/8;
-// reg [2:0]gen5 = GEN5_PIPEWIDTH/8;
 
 reg [63:0]valid_reg;
 
@@ -56,48 +50,8 @@ begin
     endcase
 end
 
-// localparam s0 = 1'b0;
 
-// localparam s1 = 1'b1;
-
-
-// always @(posedge clk or negedge rst) begin
-//     if(~rst)
-//     begin 
-//         state <= s0;
-//     end
-//     else 
-//     begin
-//         state <= state_next;     
-//     end
-// end  
-
-// always @* 
-// begin
-//     case (state)
-//        s0: if(~hld_pd_gen)begin
-//         state_next = s1;
-//         w_reg = 1;
-//      end
-//      else begin
-//         state_next = s0;
-//         w_reg = 0; 
-//      end
-//         s1:if(hld_pd_gen)begin
-//         state_next = s0;
-//         w_reg = 0;
-//      end
-//      else begin
-//         state_next = s1;
-//         w_reg = 1; 
-//      end
-//     default:state_next = s0;
-//     endcase
-     
-
-     
-// end
-// assign sel = 1'b0;
-// assign w = w_reg;
+assign sel = 1'b0;
+assign w = valid_pd & linkup;
 assign valid = valid_reg;  
 endmodule
