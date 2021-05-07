@@ -3,14 +3,25 @@ reg [511:0]data_in;
 reg [63:0]DK;
 reg [63:0]valid;
 wire [511:0]data_out;
-wire [64*3 -1:0]ByteType;
-GenDataPath DUT(
+
+wire [63:0]dlpstart1; 
+wire [63:0]dlpend1  ; 
+wire [63:0]tlpstart1; 
+wire [63:0]tlpedb1  ; 
+wire [63:0]tlpend1  ; 
+wire [63:0]valid_d;
+Gen1_2_DataPath DUT(
     .Data_in(data_in),
     .DK(DK),
     .valid(valid),
     
     .Data_out(data_out),
-    .ByteType(ByteType)
+    .dlpstart (dlpstart1),
+    .dlpend   (dlpend1  ),
+    .tlpstart (tlpstart1),
+    .tlpedb   (tlpedb1  ),
+    .tlpend   (tlpend1  ),
+    .valid_d  (valid_d)  
 
 );
 // data boundries

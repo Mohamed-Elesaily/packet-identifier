@@ -27,9 +27,7 @@ localparam N = 64;
 
 reg [63:0]valid_reg;
 
-reg state, state_next;
-reg w_reg;
-integer valid_i=0;
+
 // gen decoder
 always @*
 begin

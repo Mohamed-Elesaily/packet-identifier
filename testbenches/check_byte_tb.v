@@ -5,7 +5,7 @@ reg [7:0] data_in,data_in2;
 // reg [1:0] tlp_or_dllp_in;
 reg valid,DK,valid2,DK2;
 wire [1:0]tlp_out,tlp_out2;
-wire [2:0]type,type2;
+wire [5:0]type,type2;
 check_byte dut (
        .data_in(data_in),
        .tlp_or_dllp_in(tlp_out), 

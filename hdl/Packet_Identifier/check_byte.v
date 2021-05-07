@@ -27,7 +27,7 @@ module check_byte(
     localparam dllp = 2'b10;
     localparam not_valid_data = 2'b00 ;
    
-    reg[2:0] type_reg;    
+    reg[5:0] type_reg;    
     reg [1:0]tlp_or_dllp_out_reg;
 
     reg [1:0]tlp_or_dllp_in_reg;
@@ -35,7 +35,7 @@ module check_byte(
     always @*
     begin
        tlp_or_dllp_out_reg=tlp_or_dllp_in;
-       type_reg=not_valid;  
+    //    type_reg=not_valid;  
         if(valid)begin
             if(DK)
             begin

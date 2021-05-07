@@ -39,7 +39,7 @@ packet_identifier DUT(
 );
 localparam padding = {384{1'b0}};
 localparam padding_dk = {48{1'b0}};
-localparam p1 = 128'hFB_1234560067657349890324043244_FD;
+localparam p1 = 128'hFD_1234560067657349890324043244_FB;
 localparam DK1 = 16'h1_00_1;
 initial begin
 gen = 3'b000;valid_pd=0;linkup=0;DK=0;Data_in=0;
