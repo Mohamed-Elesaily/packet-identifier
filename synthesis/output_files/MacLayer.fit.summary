@@ -1,0 +1,14 @@
+Fitter Status : Failed - Sat Apr 24 00:27:38 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : MacLayer
+Top-level Entity Name : MacLayer
+Family : Cyclone IV E
+Total logic elements : 1,088
+    Total combinational functions : 1,088
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 1,284
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -40,6 +40,14 @@ packet_identifier DUT(
 localparam padding = {384{1'b0}};
 localparam padding_dk = {48{1'b0}};
 localparam p1 = 128'hFD_1234560067657349890324043244_FB;
+localparam p2 = 128'h67_1234560067657349890324043244_78; //long packet
+localparam p2_2 = 128'h67_1234560676F5F5F5_FD_3024043244_35; // end p2 ,pad and not packet data
+
+localparam DK2 =16'h1;
+
+
+localparam DK2_2 =16'h0F40;
+
 localparam DK1 = 16'h1_00_1;
 initial begin
 gen = 3'b000;valid_pd=0;linkup=0;DK=0;Data_in=0;
@@ -48,9 +56,9 @@ valid_pd=1;linkup=1;DK=0;Data_in=0;
 #10
 DK=DK1;Data_in=p1;
 #10
-DK=0;Data_in=0;
+DK=DK2;Data_in=p2;
 #10
-DK=0;Data_in=0;
+DK=DK2_2;Data_in=p2_2;
 #10
 DK=0;Data_in=0;
 #10
