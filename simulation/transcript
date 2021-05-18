@@ -1,4 +1,4 @@
-# reading modelsim.ini
+# OpenFile MacLayer.mpf
 # Loading project MacLayer
 # Compile of check_byte.v was successful.
 # Compile of Gen1_2_DataPath.v was successful.
@@ -10,3 +10,105 @@
 # Compile of GenDataPath_tb.v was successful.
 # Compile of packet_identifier_tb.v was successful.
 # 9 compiles, 0 failed with no errors.
+vsim work.packet_identifier_tb
+# vsim work.packet_identifier_tb 
+# Start time: 15:02:44 on May 18,2021
+# Loading work.packet_identifier_tb
+# Loading work.packet_identifier
+# Loading work.Gen1_2_DataPath
+# Loading work.Gen_ctrl
+# Loading work.Gen_mux
+# Loading work.check_byte
+add wave -position insertpoint sim:/packet_identifier_tb/*
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
+#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
+# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
+# Compile of check_byte.v was successful.
+# Compile of Gen1_2_DataPath.v was successful.
+# Compile of Gen_ctrl.v was successful.
+# Compile of Gen_mux.v was successful.
+# Compile of packet_identifier.v was successful.
+# Compile of check_byte_tb.v was successful.
+# Compile of Gen_ctrl_tb.v was successful.
+# Compile of GenDataPath_tb.v was successful.
+# Compile of packet_identifier_tb.v was successful.
+# 9 compiles, 0 failed with no errors.
+# Compile of check_byte.v was successful.
+# Compile of Gen1_2_DataPath.v was successful.
+# Compile of Gen_ctrl.v was successful.
+# Compile of Gen_mux.v was successful.
+# Compile of packet_identifier.v was successful.
+# Compile of check_byte_tb.v was successful.
+# Compile of Gen_ctrl_tb.v was successful.
+# Compile of GenDataPath_tb.v was successful.
+# Compile of packet_identifier_tb.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.packet_identifier_tb
+# End time: 15:05:12 on May 18,2021, Elapsed time: 0:02:28
+# Errors: 0, Warnings: 4
+# vsim work.packet_identifier_tb 
+# Start time: 15:05:12 on May 18,2021
+# Loading work.packet_identifier_tb
+# Loading work.packet_identifier
+# Loading work.Gen1_2_DataPath
+# Loading work.Gen_ctrl
+# Loading work.Gen_mux
+# Loading work.check_byte
+add wave -position insertpoint sim:/packet_identifier_tb/*
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
+#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
+# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
+# Compile of check_byte.v was successful.
+# Compile of Gen1_2_DataPath.v was successful.
+# Compile of Gen_ctrl.v was successful.
+# Compile of Gen_mux.v was successful.
+# Compile of packet_identifier.v was successful.
+# Compile of check_byte_tb.v was successful.
+# Compile of Gen_ctrl_tb.v was successful.
+# Compile of GenDataPath_tb.v was successful.
+# Compile of packet_identifier_tb.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.packet_identifier_tb
+# End time: 15:09:14 on May 18,2021, Elapsed time: 0:04:02
+# Errors: 0, Warnings: 2
+# vsim work.packet_identifier_tb 
+# Start time: 15:09:14 on May 18,2021
+# Loading work.packet_identifier_tb
+# Loading work.packet_identifier
+# Loading work.Gen1_2_DataPath
+# Loading work.Gen_ctrl
+# Loading work.Gen_mux
+# Loading work.check_byte
+add wave -position insertpoint sim:/packet_identifier_tb/*
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
+#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
+# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
+# Compile of check_byte.v was successful.
+# Compile of Gen1_2_DataPath.v was successful.
+# Compile of Gen_ctrl.v was successful.
+# Compile of Gen_mux.v was successful.
+# Compile of packet_identifier.v was successful.
+# Compile of check_byte_tb.v was successful.
+# Compile of Gen_ctrl_tb.v was successful.
+# Compile of GenDataPath_tb.v was successful.
+# Compile of packet_identifier_tb.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.packet_identifier_tb
+# End time: 15:14:19 on May 18,2021, Elapsed time: 0:05:05
+# Errors: 0, Warnings: 2
+# vsim work.packet_identifier_tb 
+# Start time: 15:14:19 on May 18,2021
+# Loading work.packet_identifier_tb
+# Loading work.packet_identifier
+# Loading work.Gen1_2_DataPath
+# Loading work.Gen_ctrl
+# Loading work.Gen_mux
+# Loading work.check_byte
+add wave -position insertpoint sim:/packet_identifier_tb/*
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
+#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
+# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66

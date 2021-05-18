@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MacLayer
-Fri May  7 17:07:40 2021
+Tue May 18 15:13:29 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -47,16 +47,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May  7 17:07:40 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 18 15:13:29 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; MacLayer                                    ;
 ; Top-level Entity Name              ; packet_identifier                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 295                                         ;
-;     Total combinational functions  ; 295                                         ;
+; Total logic elements               ; 297                                         ;
+;     Total combinational functions  ; 297                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 1,478                                       ;
+; Total pins                         ; 1,483                                       ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -158,11 +158,10 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -179,36 +178,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 295                         ;
-;                                             ;                             ;
-; Total combinational functions               ; 295                         ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 196                         ;
-;     -- 3 input functions                    ; 75                          ;
-;     -- <=2 input functions                  ; 24                          ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 295                         ;
-;     -- arithmetic mode                      ; 0                           ;
-;                                             ;                             ;
-; Total registers                             ; 0                           ;
-;     -- Dedicated logic registers            ; 0                           ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 1478                        ;
-;                                             ;                             ;
-; Embedded Multiplier 9-bit elements          ; 0                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; Gen_ctrl:gen_ctrl|WideOr0~0 ;
-; Maximum fan-out                             ; 58                          ;
-; Total fan-out                               ; 3096                        ;
-; Average fan-out                             ; 0.95                        ;
-+---------------------------------------------+-----------------------------+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 297                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 297                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 199                      ;
+;     -- 3 input functions                    ; 88                       ;
+;     -- <=2 input functions                  ; 10                       ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 297                      ;
+;     -- arithmetic mode                      ; 0                        ;
+;                                             ;                          ;
+; Total registers                             ; 0                        ;
+;     -- Dedicated logic registers            ; 0                        ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 1483                     ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; Gen_ctrl:gen_ctrl|Mux7~0 ;
+; Maximum fan-out                             ; 29                       ;
+; Total fan-out                               ; 3172                     ;
+; Average fan-out                             ; 0.97                     ;
++---------------------------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,25 +215,25 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name       ; Library Name ;
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
-; |packet_identifier                                   ; 295 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 1478 ; 0            ; |packet_identifier                                                                        ; packet_identifier ; work         ;
-;    |Gen1_2_DataPath:gen1_2_db|                       ; 293 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db                                              ; Gen1_2_DataPath   ; work         ;
-;       |check_byte:generate_checkbytes[0].CheckByte|  ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte  ; check_byte        ; work         ;
+; |packet_identifier                                   ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 1483 ; 0            ; |packet_identifier                                                                        ; packet_identifier ; work         ;
+;    |Gen1_2_DataPath:gen1_2_db|                       ; 288 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db                                              ; Gen1_2_DataPath   ; work         ;
+;       |check_byte:generate_checkbytes[0].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[10].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[11].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[12].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[13].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[14].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[15].CheckByte| ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte ; check_byte        ; work         ;
+;       |check_byte:generate_checkbytes[14].CheckByte| ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte ; check_byte        ; work         ;
+;       |check_byte:generate_checkbytes[15].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[1].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[2].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[3].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[4].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte  ; check_byte        ; work         ;
+;       |check_byte:generate_checkbytes[4].CheckByte|  ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[5].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[6].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[7].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte  ; check_byte        ; work         ;
+;       |check_byte:generate_checkbytes[7].CheckByte|  ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte  ; check_byte        ; work         ;
 ;       |check_byte:generate_checkbytes[8].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[9].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte  ; check_byte        ; work         ;
-;    |Gen_ctrl:gen_ctrl|                               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen_ctrl:gen_ctrl                                                      ; Gen_ctrl          ; work         ;
+;       |check_byte:generate_checkbytes[9].CheckByte|  ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte  ; check_byte        ; work         ;
+;    |Gen_ctrl:gen_ctrl|                               ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen_ctrl:gen_ctrl                                                      ; Gen_ctrl          ; work         ;
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -244,11 +243,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------+---+
 ; Logic Cell Name                                                                             ;   ;
 +---------------------------------------------------------------------------------------------+---+
-; rtl~0                                                                                       ;   ;
-; rtl~1                                                                                       ;   ;
-; Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|tlp_or_dllp_out[1]~0  ;   ;
+; Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[1]~0 ;   ;
 ; Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[0]~1 ;   ;
-; Number of logic cells representing combinational loops                                      ; 4 ;
+; Number of logic cells representing combinational loops                                      ; 2 ;
 +---------------------------------------------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -268,29 +265,45 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte|type[0]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte|type[1]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte|type[0]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte|type[0]            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte|type[0]           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte|type[0]           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte|type[0]           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte|type[0]           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte|type[0]           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|type[0]           ;
-; 259:1              ; 2 bits    ; 344 LEs       ; 6 LEs                ; 338 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|tlp_or_dllp_out[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|type[0]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte|type[0]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte|type[0]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte|type[4]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte|type[1]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte|type[1]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte|type[4]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte|type[4]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte|type[0]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte|type[1]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte|type[1]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte|type[1]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte|type[4]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte|type[0]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte|type[0]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|type[0]            ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |packet_identifier|Gen_ctrl:gen_ctrl|Mux14                                                                   ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte|tlp_or_dllp_out[1]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte|tlp_or_dllp_out[0]  ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte|tlp_or_dllp_out[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte|tlp_or_dllp_out[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte|tlp_or_dllp_out[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte|tlp_or_dllp_out[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte|tlp_or_dllp_out[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -326,16 +339,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 1478                        ;
-; cycloneiii_lcell_comb ; 296                         ;
-;     normal            ; 296                         ;
+; boundary_port         ; 1483                        ;
+; cycloneiii_lcell_comb ; 298                         ;
+;     normal            ; 298                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 75                          ;
-;         4 data inputs ; 196                         ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 88                          ;
+;         4 data inputs ; 199                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 47.00                       ;
-; Average LUT depth     ; 14.27                       ;
+; Max LUT depth         ; 36.00                       ;
+; Average LUT depth     ; 10.33                       ;
 +-----------------------+-----------------------------+
 
 
@@ -354,7 +367,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri May  7 17:07:20 2021
+    Info: Processing started: Tue May 18 15:13:09 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MacLayer -c MacLayer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -372,37 +385,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/m
 Info (12127): Elaborating entity "packet_identifier" for the top level hierarchy
 Info (12128): Elaborating entity "Gen1_2_DataPath" for hierarchy "Gen1_2_DataPath:gen1_2_db" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 54
 Info (12128): Elaborating entity "check_byte" for hierarchy "Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v Line: 40
-Warning (10230): Verilog HDL assignment warning at check_byte.v(38): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 38
-Warning (10230): Verilog HDL assignment warning at check_byte.v(45): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 45
-Warning (10230): Verilog HDL assignment warning at check_byte.v(51): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 51
-Warning (10230): Verilog HDL assignment warning at check_byte.v(58): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 58
-Warning (10230): Verilog HDL assignment warning at check_byte.v(62): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 62
-Warning (10230): Verilog HDL assignment warning at check_byte.v(68): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 68
-Warning (10230): Verilog HDL assignment warning at check_byte.v(72): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 72
 Warning (10270): Verilog HDL Case Statement warning at check_byte.v(42): incomplete case statement has no default case item File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 42
-Warning (10230): Verilog HDL assignment warning at check_byte.v(78): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 78
-Warning (10230): Verilog HDL assignment warning at check_byte.v(82): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 82
-Warning (10230): Verilog HDL assignment warning at check_byte.v(88): truncated value with size 6 to match size of target (3) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 88
-Info (12128): Elaborating entity "Gen_ctrl" for hierarchy "Gen_ctrl:gen_ctrl" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 71
-Warning (10036): Verilog HDL or VHDL warning at Gen_ctrl.v(32): object "valid_i" assigned a value but never read File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 32
-Info (12128): Elaborating entity "Gen_mux" for hierarchy "Gen_mux:gen_mux" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 83
+Info (12128): Elaborating entity "Gen_ctrl" for hierarchy "Gen_ctrl:gen_ctrl" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 72
+Warning (10036): Verilog HDL or VHDL warning at Gen_ctrl.v(32): object "shift" assigned a value but never read File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 32
+Warning (10270): Verilog HDL Case Statement warning at Gen_ctrl.v(35): incomplete case statement has no default case item File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 35
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(35): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 35
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(51): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 51
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(59): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 59
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(68): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 68
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(76): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 76
+Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(84): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 84
+Info (12128): Elaborating entity "Gen_mux" for hierarchy "Gen_mux:gen_mux" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 84
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pl_valid[0]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[1]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[2]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[3]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[4]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[5]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[6]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[7]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[8]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[9]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[10]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[11]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[12]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[13]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[14]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[15]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
     Warning (13410): Pin "pl_valid[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
     Warning (13410): Pin "pl_valid[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
     Warning (13410): Pin "pl_valid[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
@@ -547,22 +541,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "pl_dlpend[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
     Warning (13410): Pin "pl_dlpend[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
     Warning (13410): Pin "pl_dlpend[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_tlpstart[0]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[1]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[2]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[3]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[4]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[5]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[6]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[7]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[8]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[9]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[10]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[11]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[12]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[13]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[14]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[15]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
     Warning (13410): Pin "pl_tlpstart[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
     Warning (13410): Pin "pl_tlpstart[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
     Warning (13410): Pin "pl_tlpstart[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
@@ -659,22 +637,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "pl_tlpedb[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
     Warning (13410): Pin "pl_tlpedb[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
     Warning (13410): Pin "pl_tlpedb[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpend[0]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[1]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[2]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[3]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[4]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[5]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[6]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[7]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[8]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[9]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[10]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[11]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[12]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[13]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[14]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[15]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
     Warning (13410): Pin "pl_tlpend[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
     Warning (13410): Pin "pl_tlpend[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
     Warning (13410): Pin "pl_tlpend[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
@@ -775,14 +737,14 @@ Warning (21074): Design contains 48 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "DK[61]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
     Warning (15610): No output dependent on input pin "DK[62]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
     Warning (15610): No output dependent on input pin "DK[63]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-Info (21057): Implemented 1773 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 581 input pins
+Info (21057): Implemented 1780 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 586 input pins
     Info (21059): Implemented 897 output pins
-    Info (21061): Implemented 295 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 400 warnings
-    Info: Peak virtual memory: 384 megabytes
-    Info: Processing ended: Fri May  7 17:07:40 2021
+    Info (21061): Implemented 297 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 343 warnings
+    Info: Peak virtual memory: 381 megabytes
+    Info: Processing ended: Tue May 18 15:13:29 2021
     Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Total CPU time (on all processors): 00:00:42
 
 

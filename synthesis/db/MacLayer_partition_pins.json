@@ -2052,6 +2052,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "pl_valid[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_valid[15]",
+					"strict" : false
+				},
+				{
 					"name" : "pl_dlpstart[0]",
 					"strict" : false
 				},
@@ -2180,6 +2244,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "pl_tlpstart[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpstart[15]",
+					"strict" : false
+				},
+				{
 					"name" : "pl_tlpedb[0]",
 					"strict" : false
 				},
@@ -2241,6 +2369,70 @@
 				},
 				{
 					"name" : "pl_tlpedb[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pl_tlpend[15]",
 					"strict" : false
 				},
 				{
@@ -4309,6 +4501,26 @@
 				},
 				{
 					"name" : "DK[0]",
+					"strict" : false
+				},
+				{
+					"name" : "numberOfDetectedLanes[4]",
+					"strict" : false
+				},
+				{
+					"name" : "numberOfDetectedLanes[1]",
+					"strict" : false
+				},
+				{
+					"name" : "numberOfDetectedLanes[2]",
+					"strict" : false
+				},
+				{
+					"name" : "numberOfDetectedLanes[3]",
+					"strict" : false
+				},
+				{
+					"name" : "numberOfDetectedLanes[0]",
 					"strict" : false
 				},
 				{
