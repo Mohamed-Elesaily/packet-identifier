@@ -19,16 +19,17 @@ module Gen_ctrl
 
 );
 
-localparam gen1_sel = 3'b000;
-localparam gen2_sel = 3'b001;
-localparam gen3_sel = 3'b010;
-localparam gen4_sel = 3'b011;
-localparam gen5_sel = 3'b100;
+localparam gen1_sel = 3'd1;
+localparam gen2_sel = 3'd2;
+localparam gen3_sel = 3'd3;
+localparam gen4_sel = 3'd4;
+localparam gen5_sel = 3'd5;
 
 
 localparam N = 64;
 
 reg [63:0]valid_reg;
+
 
 
 // gen decoder
@@ -83,7 +84,7 @@ begin
 end
 
 
-assign sel = 1'b0;
+assign sel =(gen == gen1_sel | gen == gen2_sel)? 1'b0:1'b1;
 assign w = valid_pd & linkup;
 assign valid = valid_reg;  
 endmodule
