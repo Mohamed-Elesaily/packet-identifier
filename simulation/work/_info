@@ -9,215 +9,74 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/msm/mohamed/GP/simulation
-vcheck_byte
-Z1 !s110 1621343649
+vGen_3_check_byte
+Z1 !s110 1623357059
 !i10b 1
-!s100 EgQz=6FP4WMf8P803n6bM2
+!s100 U@LSzk3n?h16;NSDkF7VP3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I[k<5RTkf8?b]S0Mfb4d]S2
+IWSZoP8YRkHSOKOD2dI=;V0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1621343582
-8/home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v
-F/home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v
-!i122 149
-L0 1 95
+w1623357056
+8/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v
+F/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v
+!i122 159
+L0 2 157
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1621343649.000000
-!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v|
+Z5 !s108 1623357059.000000
+!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v|
 !i113 1
 Z6 o-work work
 Z7 tCvgOpt 0
-vcheck_tb
+n@gen_3_check_byte
+vGen_3_check_byte_tb
 R1
 !i10b 1
-!s100 RN^7fXQ3M=?36Z`64Zc4H1
+!s100 3DzO::GgTf2IcdHfceQS83
 R2
-IUN_C<B[V]VIb384eo05HX0
+I2E96nO=1d:fSQ=EKNgFld1
 R3
 R0
-w1620429653
-8/home/msm/mohamed/GP/testbenches/packet_identifier/check_byte_tb.v
-F/home/msm/mohamed/GP/testbenches/packet_identifier/check_byte_tb.v
-!i122 154
-L0 1 87
+w1623357024
+8/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+F/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+!i122 160
+L0 1 72
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/msm/mohamed/GP/testbenches/packet_identifier/check_byte_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/testbenches/packet_identifier/check_byte_tb.v|
+!s107 /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v|
 !i113 1
 R6
 R7
-vGen1_2_DataPath
+n@gen_3_check_byte_tb
+vreg_check
 R1
 !i10b 1
-!s100 X^J3GXQ3AGg@a3oUP]=WD3
+!s100 3CPnX7XbBHB[fG06G2NlV1
 R2
-I8`K_6NkhG10:6a^e8hjdF2
+I?fDI_D4eD]N^DPHCJ70dz3
 R3
 R0
-w1620401635
-8/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v
-F/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v
-!i122 150
-L0 2 72
+w1623334537
+8/home/msm/mohamed/GP/hdl/reg_check.v
+F/home/msm/mohamed/GP/hdl/reg_check.v
+!i122 161
+L0 1 21
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v|
-!i113 1
-R6
-R7
-n@gen1_2_@data@path
-vGen_ctrl
-R1
-!i10b 1
-!s100 T5Z69Pf>hB8ca9;QF4]Wb2
-R2
-IV94Snok8W4Nhim;^iZZ:P2
-R3
-R0
-w1621342603
-8/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v
-F/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v
-!i122 151
-L0 1 101
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v|
-!i113 1
-R6
-R7
-n@gen_ctrl
-vGen_ctrl_tb
-R1
-!i10b 1
-!s100 >^aCFo3]Efzd9X]fb<k3B3
-R2
-I3BEnLJgIPOZ=36a5z>k6_3
-R3
-R0
-w1619891279
-8/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_ctrl_tb.v
-F/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_ctrl_tb.v
-!i122 155
-L0 1 37
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_ctrl_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/testbenches/packet_identifier/Gen_ctrl_tb.v|
-!i113 1
-R6
-R7
-n@gen_ctrl_tb
-vGen_mux
-R1
-!i10b 1
-!s100 geW@S[;bD0HBM?8imTJVR2
-R2
-Io;C=g7ChPGMf[ejL<:<TK2
-R3
-R0
-w1620083989
-8/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v
-F/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v
-!i122 152
-L0 1 12
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v|
-!i113 1
-R6
-R7
-n@gen_mux
-vGenDataPath_tb
-R1
-!i10b 1
-!s100 Qgd7aV`<UgG4`eebnWOgi1
-R2
-I6;f1f277QAMYNM5fLS8]22
-R3
-R0
-w1620401969
-8/home/msm/mohamed/GP/testbenches/packet_identifier/GenDataPath_tb.v
-F/home/msm/mohamed/GP/testbenches/packet_identifier/GenDataPath_tb.v
-!i122 156
-L0 1 71
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/testbenches/packet_identifier/GenDataPath_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/testbenches/packet_identifier/GenDataPath_tb.v|
-!i113 1
-R6
-R7
-n@gen@data@path_tb
-vpacket_identifier
-R1
-!i10b 1
-!s100 kn@^CAbW[9Hd9mTS:L=Ri2
-R2
-IeC0^==65mLB90:hH3O=FW2
-R3
-R0
-w1621342756
-8/home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v
-F/home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v
-!i122 153
-L0 1 86
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v|
-!i113 1
-R6
-R7
-vpacket_identifier_tb
-R1
-!i10b 1
-!s100 k7k1NS@IAKWKhV_[T<3fW1
-R2
-IJC[3XKg9:HROVdhaUS:nh3
-R3
-R0
-w1621343318
-8/home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v
-F/home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v
-!i122 157
-L0 1 80
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v|
+!s107 /home/msm/mohamed/GP/hdl/reg_check.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/msm/mohamed/GP/hdl/reg_check.v|
 !i113 1
 R6
 R7

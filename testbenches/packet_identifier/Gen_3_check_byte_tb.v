@@ -1,83 +1,72 @@
-module check_tb();
-
-
-reg [7:0] data_in;
+module Gen_3_check_byte_tb;
+reg [7:0]data,data2;
 reg valid;
-reg [1:0]syncheader;
-wire [4:0]tlp_out;
-wire [5:0]type;
-Gen_3_check_byte dut (
-       .data_in(data_in),
-       .tlp_or_dllp_in(tlp_out), 
-       .valid(valid),
-       .SyncHeader(syncheader),
-        .type(type),
-    .tlp_or_dllp_out(tlp_out) 
-);
+reg [1:0]syncHeader;
+reg rst;
+reg clk;
+wire [11:0]byte_count,byte_count2,byte_count3;
+wire [2:0]byteheader,byteheader2,byteheader3;
+wire [11:0]count_limit,count_limit2,count_limit3;
+wire [5:0]type,type2;
 
-
-// data boundries
+localparam SDP_byte1 = 8'b1111_0000;
+localparam SDP_byte2 = 8'b0101_0011 ;
 localparam STP = 4'b1111 ;
 
-    localparam SDP_byte1 = 8'b1111_0000;
-    localparam SDP_byte2 = 8'b0101_0011 ;
-    
-    localparam END_byte1 = 8'b0001_1111 ;
-    localparam END_byte2 = 8'b0000_0000 ;
-    localparam END_byte3 = 8'b1001_0000 ;
-    localparam END_byte4 = 8'b0000_0000 ;
-    
-    localparam EDB_byte1 = 8'b1100_0000 ;
-    localparam EDB_byte2 = 8'b1100_0000 ;
-    localparam EDB_byte3 = 8'b111_11110 ;
-    localparam EDB_byte4 = 8'b111_11110 ; 
-    
-    // syncheader
-    localparam k= 2'b01;
-    localparam d= 2'b10;
-
-
-
-initial 
-begin
-
-data_in=0;valid=0;syncheader=d;
-
-
-#10 data_in=0;valid=1;syncheader=d;
-
-#10 data_in=1;syncheader=k;
-#10 data_in=1;syncheader=d;
-
-
-#10 data_in=SDP_byte1;syncheader=k;
-#10 data_in=SDP_byte2;syncheader=k;
-
-#10 data_in=1;syncheader=d;
-#10 data_in=2;syncheader=d;
-#10 data_in=3;syncheader=d;
-
-
-#10 data_in=END_byte1;syncheader=k;
-#10 data_in=END_byte2;syncheader=k;
-#10 data_in=END_byte3;syncheader=k;
-#10 data_in=END_byte4;syncheader=k;
-
-#10 data_in=2;syncheader=d;
-#10 data_in=3;syncheader=d;
-
-
-
-#10
+initial begin
+   clk=0; rst = 0;valid = 1; data = 0; data2=0;#10 rst=1;syncHeader = 2'b01;
+    // #10 rst=1;syncHeader = 2'b01;
+    // data = SDP_byte1; data2 = SDP_byte2;
+    // #10 data = 0;data2 = 1;
+    // #10 data = 2;data2 = 3;
+    // #10 data = 4;data2 = 5;
+    // #10 data = 1;data2 = 3;
+    data = {4'd8,STP}; data2 = 0;
+    #10 data = 0;data2 = 1;
+    #10 data = 2;data2 = 3;
+    #10 data = 4;data2 = 5;
+    #10 data = 1;data2 = 3;
+    #10 data =  8'b1100_0000;
+    #50
 $stop();
+
 
 end
 
 
+Gen_3_check_byte dut(
+    .data_in        (data) ,
+    .valid          (valid)  ,   
+    .byte_count_in  (byte_count3) ,
+    .byte_header_in  (byteheader3) ,
+    .count_limit_in (count_limit3),         
+    .type           (type)         ,
+    .byte_count_out (byte_count2),
+    .byte_header_out(byteheader2)  ,       
+    .count_limit_out(count_limit2)       
 
 
+);
+Gen_3_check_byte dut2(
+    .data_in        (data2) ,
+    .valid          (valid),
+    .byte_count_in  (byte_count2),
+    .byte_header_in  (byteheader2),
+    .count_limit_in (count_limit2) ,
+    .type           (type2)        ,
+    .byte_count_out (byte_count)  ,
+    .byte_header_out(byteheader)  ,
+    .count_limit_out(count_limit)       
 
 
+);
 
-
+reg_check dut3(
+ .clk(clk),
+ .rst(rst),
+ .data_in({byte_count,byteheader,count_limit}),
+ .data_out({byte_count3,byteheader3,count_limit3})
+);
+always 
+   #5 clk = ~clk;
 endmodule

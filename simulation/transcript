@@ -1,114 +1,463 @@
-# OpenFile MacLayer.mpf
-# Loading project MacLayer
-# Compile of check_byte.v was successful.
-# Compile of Gen1_2_DataPath.v was successful.
-# Compile of Gen_ctrl.v was successful.
-# Compile of Gen_mux.v was successful.
-# Compile of packet_identifier.v was successful.
-# Compile of check_byte_tb.v was successful.
-# Compile of Gen_ctrl_tb.v was successful.
-# Compile of GenDataPath_tb.v was successful.
-# Compile of packet_identifier_tb.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.packet_identifier_tb
-# vsim work.packet_identifier_tb 
-# Start time: 15:02:44 on May 18,2021
-# Loading work.packet_identifier_tb
-# Loading work.packet_identifier
-# Loading work.Gen1_2_DataPath
-# Loading work.Gen_ctrl
-# Loading work.Gen_mux
-# Loading work.check_byte
-add wave -position insertpoint sim:/packet_identifier_tb/*
+# OpenFile packet_identifier.mpf
+# Loading project packet_identifier
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v failed with 1 errors.
+# Compile of reg_check.v was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Gen_3_check_byte_tb
+# vsim work.Gen_3_check_byte_tb 
+# Start time: 16:12:58 on Jun 10,2021
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 30
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 43
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(43): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(43): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (26) does not match connection size (27) for port 'data_in'. The port definition is at: /home/msm/mohamed/GP/hdl/reg_check.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut3 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (26) does not match connection size (27) for port 'data_out'. The port definition is at: /home/msm/mohamed/GP/hdl/reg_check.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut3 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 57
+add wave -position insertpoint sim:/Gen_3_check_byte_tb/*
 run -all
-# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
-#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
-# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
-# Compile of check_byte.v was successful.
-# Compile of Gen1_2_DataPath.v was successful.
-# Compile of Gen_ctrl.v was successful.
-# Compile of Gen_mux.v was successful.
-# Compile of packet_identifier.v was successful.
-# Compile of check_byte_tb.v was successful.
-# Compile of Gen_ctrl_tb.v was successful.
-# Compile of GenDataPath_tb.v was successful.
-# Compile of packet_identifier_tb.v was successful.
-# 9 compiles, 0 failed with no errors.
-# Compile of check_byte.v was successful.
-# Compile of Gen1_2_DataPath.v was successful.
-# Compile of Gen_ctrl.v was successful.
-# Compile of Gen_mux.v was successful.
-# Compile of packet_identifier.v was successful.
-# Compile of check_byte_tb.v was successful.
-# Compile of Gen_ctrl_tb.v was successful.
-# Compile of GenDataPath_tb.v was successful.
-# Compile of packet_identifier_tb.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.packet_identifier_tb
-# End time: 15:05:12 on May 18,2021, Elapsed time: 0:02:28
-# Errors: 0, Warnings: 4
-# vsim work.packet_identifier_tb 
-# Start time: 15:05:12 on May 18,2021
-# Loading work.packet_identifier_tb
-# Loading work.packet_identifier
-# Loading work.Gen1_2_DataPath
-# Loading work.Gen_ctrl
-# Loading work.Gen_mux
-# Loading work.check_byte
-add wave -position insertpoint sim:/packet_identifier_tb/*
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(24)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 24
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
 run -all
-# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
-#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
-# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
-# Compile of check_byte.v was successful.
-# Compile of Gen1_2_DataPath.v was successful.
-# Compile of Gen_ctrl.v was successful.
-# Compile of Gen_mux.v was successful.
-# Compile of packet_identifier.v was successful.
-# Compile of check_byte_tb.v was successful.
-# Compile of Gen_ctrl_tb.v was successful.
-# Compile of GenDataPath_tb.v was successful.
-# Compile of packet_identifier_tb.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.packet_identifier_tb
-# End time: 15:09:14 on May 18,2021, Elapsed time: 0:04:02
-# Errors: 0, Warnings: 2
-# vsim work.packet_identifier_tb 
-# Start time: 15:09:14 on May 18,2021
-# Loading work.packet_identifier_tb
-# Loading work.packet_identifier
-# Loading work.Gen1_2_DataPath
-# Loading work.Gen_ctrl
-# Loading work.Gen_mux
-# Loading work.check_byte
-add wave -position insertpoint sim:/packet_identifier_tb/*
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Gen_3_check_byte_tb
+# End time: 16:37:46 on Jun 10,2021, Elapsed time: 0:24:48
+# Errors: 0, Warnings: 8
+# vsim work.Gen_3_check_byte_tb 
+# Start time: 16:37:46 on Jun 10,2021
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+add wave -position insertpoint sim:/Gen_3_check_byte_tb/*
 run -all
-# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
-#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
-# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
-# Compile of check_byte.v was successful.
-# Compile of Gen1_2_DataPath.v was successful.
-# Compile of Gen_ctrl.v was successful.
-# Compile of Gen_mux.v was successful.
-# Compile of packet_identifier.v was successful.
-# Compile of check_byte_tb.v was successful.
-# Compile of Gen_ctrl_tb.v was successful.
-# Compile of GenDataPath_tb.v was successful.
-# Compile of packet_identifier_tb.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.packet_identifier_tb
-# End time: 15:14:19 on May 18,2021, Elapsed time: 0:05:05
-# Errors: 0, Warnings: 2
-# vsim work.packet_identifier_tb 
-# Start time: 15:14:19 on May 18,2021
-# Loading work.packet_identifier_tb
-# Loading work.packet_identifier
-# Loading work.Gen1_2_DataPath
-# Loading work.Gen_ctrl
-# Loading work.Gen_mux
-# Loading work.check_byte
-add wave -position insertpoint sim:/packet_identifier_tb/*
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
 run -all
-# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v(66)
-#    Time: 60 ps  Iteration: 0  Instance: /packet_identifier_tb
-# Break in Module packet_identifier_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/packet_identifier_tb.v line 66
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 60 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 31
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 44
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(44): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(25)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 25
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Gen_3_check_byte_tb
+# End time: 20:06:47 on Jun 10,2021, Elapsed time: 3:29:01
+# Errors: 0, Warnings: 9
+# vsim work.Gen_3_check_byte_tb 
+# Start time: 20:06:47 on Jun 10,2021
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+add wave -position insertpoint sim:/Gen_3_check_byte_tb/*
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v failed with 1 errors.
+# Compile of reg_check.v was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 36
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(36): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 49
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(49): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(30)
+#    Time: 100 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 30
+add wave -position 4  sim:/Gen_3_check_byte_tb/syncHeader
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 37
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(37): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(37): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 50
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(50): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(50): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31)
+#    Time: 110 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 31
+# Compile of Gen_3_check_byte.v was successful.
+# Compile of Gen_3_check_byte_tb.v was successful.
+# Compile of reg_check.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Gen_3_check_byte_tb
+# Loading work.Gen_3_check_byte
+# Loading work.reg_check
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 37
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(37): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(37): [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 11, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Gen_3_check_byte_tb/dut2 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v Line: 50
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(50): [TFMPC] - Missing connection for port 'syncHeader'.
+# ** Warning: (vsim-3722) /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(50): [TFMPC] - Missing connection for port 'rst'.
+run -all
+# ** Note: $stop    : /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v(31)
+#    Time: 110 ps  Iteration: 0  Process: /Gen_3_check_byte_tb/#INITIAL#16 File: /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v
+# Break in Module Gen_3_check_byte_tb at /home/msm/mohamed/GP/testbenches/packet_identifier/Gen_3_check_byte_tb.v line 31

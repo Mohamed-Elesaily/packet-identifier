@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MacLayer
-Tue May 18 15:13:29 2021
+Tue Jun  8 19:12:25 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,14 +13,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
+  8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |packet_identifier
- 12. Parameter Settings for User Entity Instance: Gen_ctrl:gen_ctrl
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 18 15:13:29 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun  8 19:12:25 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; MacLayer                                    ;
-; Top-level Entity Name              ; packet_identifier                           ;
+; Top-level Entity Name              ; Gen_3_check_byte                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 297                                         ;
-;     Total combinational functions  ; 297                                         ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 1,483                                       ;
+; Total logic elements               ; 69                                          ;
+;     Total combinational functions  ; 69                                          ;
+;     Dedicated logic registers      ; 29                                          ;
+; Total registers                    ; 29                                          ;
+; Total pins                         ; 69                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -69,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; packet_identifier  ; MacLayer           ;
+; Top-level entity name                                            ; Gen_3_check_byte   ; MacLayer           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -158,96 +156,73 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path             ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; ../hdl/Packet_Identifier/packet_identifier.v ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v ;         ;
-; ../hdl/Packet_Identifier/Gen_mux.v           ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v           ;         ;
-; ../hdl/Packet_Identifier/Gen_ctrl.v          ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v          ;         ;
-; ../hdl/Packet_Identifier/Gen1_2_DataPath.v   ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v   ;         ;
-; ../hdl/Packet_Identifier/check_byte.v        ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v        ;         ;
-+----------------------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path            ; Used in Netlist ; File Type              ; File Name with Absolute Path                                  ; Library ;
++---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
+; ../hdl/Packet_Identifier/Gen_3_check_byte.v ; yes             ; User Verilog HDL File  ; /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v ;         ;
++---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 297                      ;
-;                                             ;                          ;
-; Total combinational functions               ; 297                      ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 199                      ;
-;     -- 3 input functions                    ; 88                       ;
-;     -- <=2 input functions                  ; 10                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 297                      ;
-;     -- arithmetic mode                      ; 0                        ;
-;                                             ;                          ;
-; Total registers                             ; 0                        ;
-;     -- Dedicated logic registers            ; 0                        ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 1483                     ;
-;                                             ;                          ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; Gen_ctrl:gen_ctrl|Mux7~0 ;
-; Maximum fan-out                             ; 29                       ;
-; Total fan-out                               ; 3172                     ;
-; Average fan-out                             ; 0.97                     ;
-+---------------------------------------------+--------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 69        ;
+;                                             ;           ;
+; Total combinational functions               ; 69        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 29        ;
+;     -- 3 input functions                    ; 11        ;
+;     -- <=2 input functions                  ; 29        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 47        ;
+;     -- arithmetic mode                      ; 22        ;
+;                                             ;           ;
+; Total registers                             ; 29        ;
+;     -- Dedicated logic registers            ; 29        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 69        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 29        ;
+; Total fan-out                               ; 362       ;
+; Average fan-out                             ; 1.53      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
-+------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name       ; Library Name ;
-+------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
-; |packet_identifier                                   ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 1483 ; 0            ; |packet_identifier                                                                        ; packet_identifier ; work         ;
-;    |Gen1_2_DataPath:gen1_2_db|                       ; 288 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db                                              ; Gen1_2_DataPath   ; work         ;
-;       |check_byte:generate_checkbytes[0].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[10].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[11].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[12].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[13].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[14].CheckByte| ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[15].CheckByte| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[1].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[2].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[3].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[4].CheckByte|  ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[5].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[6].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[7].CheckByte|  ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[8].CheckByte|  ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte  ; check_byte        ; work         ;
-;       |check_byte:generate_checkbytes[9].CheckByte|  ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte  ; check_byte        ; work         ;
-;    |Gen_ctrl:gen_ctrl|                               ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |packet_identifier|Gen_ctrl:gen_ctrl                                                      ; Gen_ctrl          ; work         ;
-+------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
+; |Gen_3_check_byte          ; 69 (69)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 69   ; 0            ; |Gen_3_check_byte   ; Gen_3_check_byte ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                                                    ;
-+---------------------------------------------------------------------------------------------+---+
-; Logic Cell Name                                                                             ;   ;
-+---------------------------------------------------------------------------------------------+---+
-; Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[1]~0 ;   ;
-; Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[0]~1 ;   ;
-; Number of logic cells representing combinational loops                                      ; 2 ;
-+---------------------------------------------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; type_reg[0,3,4]                       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -255,7 +230,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 29    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -265,73 +240,15 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|type[0]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte|type[0]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte|type[0]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte|type[4]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte|type[1]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte|type[1]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte|type[4]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte|type[4]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte|type[0]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte|type[1]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte|type[1]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte|type[1]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte|type[4]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte|type[0]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte|type[0]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|type[0]            ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |packet_identifier|Gen_ctrl:gen_ctrl|Mux14                                                                   ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[1].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[2].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[3].CheckByte|tlp_or_dllp_out[1]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[4].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[5].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[6].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[7].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[8].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[9].CheckByte|tlp_or_dllp_out[0]  ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[10].CheckByte|tlp_or_dllp_out[0] ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[11].CheckByte|tlp_or_dllp_out[0] ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[12].CheckByte|tlp_or_dllp_out[0] ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[13].CheckByte|tlp_or_dllp_out[0] ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[14].CheckByte|tlp_or_dllp_out[0] ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 6 LEs                ; 336 LEs                ; No         ; |packet_identifier|Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[15].CheckByte|tlp_or_dllp_out[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |packet_identifier ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; GEN1_PIPEWIDTH ; 8     ; Signed Integer                                           ;
-; GEN2_PIPEWIDTH ; 8     ; Signed Integer                                           ;
-; GEN3_PIPEWIDTH ; 8     ; Signed Integer                                           ;
-; GEN4_PIPEWIDTH ; 8     ; Signed Integer                                           ;
-; GEN5_PIPEWIDTH ; 8     ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Gen_ctrl:gen_ctrl ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; GEN1_PIPEWIDTH ; 8     ; Signed Integer                        ;
-; GEN2_PIPEWIDTH ; 8     ; Signed Integer                        ;
-; GEN3_PIPEWIDTH ; 8     ; Signed Integer                        ;
-; GEN4_PIPEWIDTH ; 8     ; Signed Integer                        ;
-; GEN5_PIPEWIDTH ; 8     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |Gen_3_check_byte|count_limit_in_reg[11] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Gen_3_check_byte|byte_header_in_reg[0]  ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |Gen_3_check_byte|byte_count_in_reg[11]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -339,16 +256,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 1483                        ;
-; cycloneiii_lcell_comb ; 298                         ;
-;     normal            ; 298                         ;
+; boundary_port         ; 69                          ;
+; cycloneiii_ff         ; 29                          ;
+;     plain             ; 29                          ;
+; cycloneiii_lcell_comb ; 70                          ;
+;     arith             ; 22                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 48                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 88                          ;
-;         4 data inputs ; 199                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 17                          ;
+;         4 data inputs ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 36.00                       ;
-; Average LUT depth     ; 10.33                       ;
+; Max LUT depth         ; 5.10                        ;
+; Average LUT depth     ; 3.62                        ;
 +-----------------------+-----------------------------+
 
 
@@ -357,7 +279,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -367,10 +289,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue May 18 15:13:09 2021
+    Info: Processing started: Tue Jun  8 19:12:10 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MacLayer -c MacLayer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10463): Verilog HDL Declaration warning at Gen_3_check_byte.v(11): "type" is SystemVerilog-2005 keyword File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v
+    Info (12023): Found entity 1: Gen_3_check_byte File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v
     Info (12023): Found entity 1: packet_identifier File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_mux.v
@@ -382,369 +307,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/m
 Warning (10463): Verilog HDL Declaration warning at check_byte.v(7): "type" is SystemVerilog-2005 keyword File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v
     Info (12023): Found entity 1: check_byte File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 1
-Info (12127): Elaborating entity "packet_identifier" for the top level hierarchy
-Info (12128): Elaborating entity "Gen1_2_DataPath" for hierarchy "Gen1_2_DataPath:gen1_2_db" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 54
-Info (12128): Elaborating entity "check_byte" for hierarchy "Gen1_2_DataPath:gen1_2_db|check_byte:generate_checkbytes[0].CheckByte" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen1_2_DataPath.v Line: 40
-Warning (10270): Verilog HDL Case Statement warning at check_byte.v(42): incomplete case statement has no default case item File: /home/msm/mohamed/GP/hdl/Packet_Identifier/check_byte.v Line: 42
-Info (12128): Elaborating entity "Gen_ctrl" for hierarchy "Gen_ctrl:gen_ctrl" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 72
-Warning (10036): Verilog HDL or VHDL warning at Gen_ctrl.v(32): object "shift" assigned a value but never read File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 32
-Warning (10270): Verilog HDL Case Statement warning at Gen_ctrl.v(35): incomplete case statement has no default case item File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 35
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(35): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 35
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(51): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 51
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(59): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 59
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(68): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 68
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(76): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 76
-Info (10264): Verilog HDL Case Statement information at Gen_ctrl.v(84): all case item expressions in this case statement are onehot File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_ctrl.v Line: 84
-Info (12128): Elaborating entity "Gen_mux" for hierarchy "Gen_mux:gen_mux" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 84
+Info (12127): Elaborating entity "Gen_3_check_byte" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Gen_3_check_byte.v(75): truncated value with size 32 to match size of target (12) File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 75
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pl_valid[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_valid[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 20
-    Warning (13410): Pin "pl_dlpstart[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpstart[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 21
-    Warning (13410): Pin "pl_dlpend[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_dlpend[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 22
-    Warning (13410): Pin "pl_tlpstart[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpstart[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 23
-    Warning (13410): Pin "pl_tlpedb[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpedb[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 24
-    Warning (13410): Pin "pl_tlpend[16]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[17]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[18]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[19]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[20]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[21]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[22]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[23]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[24]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[25]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[26]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[27]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[28]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[29]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[30]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[31]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[32]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[33]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[34]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[35]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[36]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[37]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[38]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[39]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[40]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[41]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[42]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[43]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[44]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[45]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[46]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[47]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[48]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[49]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[50]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[51]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[52]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[53]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[54]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[55]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[56]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[57]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[58]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[59]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[60]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[61]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[62]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
-    Warning (13410): Pin "pl_tlpend[63]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 25
+    Warning (13410): Pin "type[0]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 11
+    Warning (13410): Pin "type[3]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 11
+    Warning (13410): Pin "type[4]" is stuck at GND File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 48 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "DK[16]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[17]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[18]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[19]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[20]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[21]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[22]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[23]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[24]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[25]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[26]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[27]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[28]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[29]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[30]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[31]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[32]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[33]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[34]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[35]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[36]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[37]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[38]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[39]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[40]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[41]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[42]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[43]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[44]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[45]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[46]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[47]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[48]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[49]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[50]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[51]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[52]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[53]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[54]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[55]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[56]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[57]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[58]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[59]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[60]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[61]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[62]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-    Warning (15610): No output dependent on input pin "DK[63]" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/packet_identifier.v Line: 13
-Info (21057): Implemented 1780 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 586 input pins
-    Info (21059): Implemented 897 output pins
-    Info (21061): Implemented 297 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 343 warnings
-    Info: Peak virtual memory: 381 megabytes
-    Info: Processing ended: Tue May 18 15:13:29 2021
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:42
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rst" File: /home/msm/mohamed/GP/hdl/Packet_Identifier/Gen_3_check_byte.v Line: 10
+Info (21057): Implemented 139 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 37 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 70 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 387 megabytes
+    Info: Processing ended: Tue Jun  8 19:12:25 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:37
 
 
