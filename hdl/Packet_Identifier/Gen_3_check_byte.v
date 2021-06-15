@@ -67,7 +67,7 @@ always @(*) begin
     else
     begin
      
-        if(valid)
+        if(valid  & (syncHeader == 2'b10))
         begin
            if(data_in == SDP_byte1 & byte_header_in == 2'b00)
         begin
@@ -98,6 +98,7 @@ always @(*) begin
             else if (byte_header_in == stp2) 
             begin
                 byte_header_in_reg = stp3;
+                count_limit_in_reg = count_limit_in_reg << 2;
                 // 
             end
             else if (byte_header_in == stp3) 

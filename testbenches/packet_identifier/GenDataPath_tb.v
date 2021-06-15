@@ -2,6 +2,7 @@ module GenDataPath_tb();
 reg [511:0]data_in;
 reg [63:0]DK;
 reg [63:0]valid;
+reg rst,clk;
 wire [511:0]data_out;
 
 wire [63:0]dlpstart1; 
@@ -14,7 +15,8 @@ Gen1_2_DataPath DUT(
     .Data_in(data_in),
     .DK(DK),
     .valid(valid),
-    
+    .rst(rst),
+    .clk(clk),
     .Data_out(data_out),
     .dlpstart (dlpstart1),
     .dlpend   (dlpend1  ),
@@ -49,7 +51,11 @@ initial begin
   DK    = 0;
   valid = 0;
   data_in=0;
+  rst = 0;
+  clk=0;
   #10
+  rst = 1;
+
    DK    =1;valid = 64'hfff0000000ffffff;data_in=STP;
   #10
  DK    =0;valid = 64'hff000000000ffff;data_in=8;
@@ -67,5 +73,6 @@ initial begin
 $stop();
 
 end
-
+always 
+    #5 clk = ~clk;
 endmodule

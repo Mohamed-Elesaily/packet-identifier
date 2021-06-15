@@ -21,7 +21,7 @@ initial begin
     // #10 data = 2;data2 = 3;
     // #10 data = 4;data2 = 5;
     // #10 data = 1;data2 = 3;
-    data = {4'd8,STP}; data2 = 0;
+    data = {4'd2,STP}; data2 = 0;
     #10 data = 0;data2 = 1;
     #10 data = 2;data2 = 3;
     #10 data = 4;data2 = 5;
@@ -39,7 +39,8 @@ Gen_3_check_byte dut(
     .valid          (valid)  ,   
     .byte_count_in  (byte_count3) ,
     .byte_header_in  (byteheader3) ,
-    .count_limit_in (count_limit3),         
+    .count_limit_in (count_limit3),
+    .syncHeader(syncHeader),         
     .type           (type)         ,
     .byte_count_out (byte_count2),
     .byte_header_out(byteheader2)  ,       
@@ -53,6 +54,7 @@ Gen_3_check_byte dut2(
     .byte_count_in  (byte_count2),
     .byte_header_in  (byteheader2),
     .count_limit_in (count_limit2) ,
+    .syncHeader(syncHeader),
     .type           (type2)        ,
     .byte_count_out (byte_count)  ,
     .byte_header_out(byteheader)  ,

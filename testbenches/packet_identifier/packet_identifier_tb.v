@@ -7,7 +7,7 @@ reg [63:0]DK;
 reg [2:0]gen;
 reg [4:0]numberOfDetectedLanes;
 wire [511:0]Data_out;
-
+reg clk,rst;
 wire w;
 wire [63:0]pl_valid     ;
 wire [63:0]pl_dlpstart  ;
@@ -17,15 +17,14 @@ wire [63:0]pl_tlpedb    ;
 wire [63:0]pl_tlpend    ;
 // localparam p1 = 64'hFB_1234_FD_5C_12_FD_12;
 packet_identifier DUT(
-
-
     .data_in(Data_in),
     .valid_pd(valid_pd),
     .gen(gen),
     .linkup(linkup),
     .DK(DK),
+    .rst(rst),
+    .clk(clk),
     .numberOfDetectedLanes(numberOfDetectedLanes),
-
     .data_out(Data_out),
     .pl_valid   (pl_valid   ),
     .pl_dlpstart(pl_dlpstart),
@@ -51,8 +50,10 @@ localparam DK2_2 =16'h0F40;
 
 localparam DK1 = 16'h1_00_1;
 initial begin
+    rst = 1;clk=0;
 numberOfDetectedLanes=8; gen = 3'b000;valid_pd=0;linkup=0;DK=0;Data_in=0;
 #10
+rst =0;
 valid_pd=1;linkup=1;DK=0;Data_in=0;
 #10
 DK=DK1;Data_in=p1;
@@ -73,7 +74,8 @@ end
 
 
 
-
+always
+   #5 clk =  ~clk;
 
 
 
